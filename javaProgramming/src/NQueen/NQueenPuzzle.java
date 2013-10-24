@@ -3,16 +3,19 @@ package NQueen;
 public class NQueenPuzzle {
 	private int[][] array;
 	private int count;
+	private int totalCount;
 	
 	NQueenPuzzle(int[][] array, int count) {
 		this.array = array;
 		this.count = count;
+		this.totalCount = 0;
 	}
 
 	public static void main(String[] args) {
 		int n = 4;
 		NQueenPuzzle puzzle = new NQueenPuzzle(new int[n][n], n);
 		puzzle.rotatePuzzle(0,0);
+		System.out.println("total count : " + puzzle.totalCount);
 	}
 	
 	private void rotatePuzzle(int row, int col) {
@@ -29,6 +32,7 @@ public class NQueenPuzzle {
 				}
 			}
 		} else {
+			this.totalCount = this.totalCount + 1;
 			for(int i = 0; i < this.count; i++) {
 				for(int j = 0; j < this.count; j++) {
 					System.out.print(this.array[i][j] + "  ");
