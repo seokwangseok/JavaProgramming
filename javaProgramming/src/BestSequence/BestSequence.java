@@ -79,8 +79,7 @@ public class BestSequence {
 			return false;
 		}
 		
-		// 이거 수정해야함 
-		int value = (compareArray.length > 1) ? originArray[index+1] : originArray[index];
+		int value = (compareArray.length > 1) ? originArray[index+compareArray.length-1] : originArray[index];
 		int[] tempArray = this.insertFirstChildInArray(value, compareArray);
 		compareArray = new int[tempArray.length];
 		compareArray = tempArray;
