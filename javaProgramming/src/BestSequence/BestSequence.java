@@ -15,7 +15,7 @@ public class BestSequence {
 	}
 
 	public static void main(String[] args) {
-		int n = 7;
+		int n = 8;
 		BestSequence bestSequence = new BestSequence(new int[n], new int[1], n);
 		bestSequence.findSequence();
 		System.out.println("totalCount : " + bestSequence.totalCount);
@@ -79,8 +79,7 @@ public class BestSequence {
 			return false;
 		}
 		
-		int value = (compareArray.length > 1) ? originArray[index+compareArray.length-1] : originArray[index];
-		int[] tempArray = this.insertFirstChildInArray(value, compareArray);
+		int[] tempArray = this.insertFirstChildInArray(originArray[index+compareArray.length-1], compareArray);
 		compareArray = new int[tempArray.length];
 		compareArray = tempArray;
 		
